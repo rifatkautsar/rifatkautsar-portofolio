@@ -1,0 +1,122 @@
+.experience-section {
+  max-width: 800px !important;
+}
+
+.experience-container {
+  display: flex;
+  min-height: 340px;
+  padding: 40px;
+  gap: 30px;
+}
+
+.tab-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-left: 2px solid var(--glass-border);
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  text-align: left;
+  padding: 0 20px;
+  height: 48px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(56, 189, 248, 0.05);
+  color: var(--accent-color);
+}
+
+.tab-btn.active {
+  color: var(--accent-color);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.tab-highlight {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 48px;
+  background: var(--accent-color);
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 2px;
+}
+
+.tab-content {
+  flex-grow: 1;
+}
+
+.tab-content h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.tab-content .company {
+  color: var(--accent-color);
+}
+
+.tab-content .range {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.tab-content ul li {
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tab-content .bullet {
+  color: var(--accent-color);
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  
+  .tab-list {
+    width: 100%;
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 2px solid var(--glass-border);
+    overflow-x: auto;
+  }
+
+  .tab-btn {
+    min-width: 120px;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .tab-highlight {
+    top: auto;
+    bottom: -2px;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    display: none; /* Can be refined for horizontal layout, hiding for simplicity in mobile */
+  }
+
+  .tab-btn.active {
+    border-bottom: 2px solid var(--accent-color);
+  }
+}
